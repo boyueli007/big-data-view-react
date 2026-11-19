@@ -1,0 +1,265 @@
+/* Gallery — dark tech editorial aesthetic */
+.gal {
+  min-height: 100vh;
+  padding-bottom: 48px;
+}
+
+/* ---------- Hero ---------- */
+.gal-hero {
+  position: relative;
+  padding: 64px 24px 40px;
+  overflow: hidden;
+}
+.gal-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(47, 214, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(47, 214, 255, 0.06) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 0%, #000 30%, transparent 75%);
+  pointer-events: none;
+}
+.gal-hero-inner {
+  position: relative;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+.gal-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Consolas', 'SFMono-Regular', ui-monospace, monospace;
+  letter-spacing: 0.32em;
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 26px;
+}
+.gal-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 14px var(--accent), 0 0 4px var(--accent);
+  animation: pulse 2.4s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.45; transform: scale(0.82); }
+}
+.gal-brand-txt { color: #6f83ac; }
+
+.gal-title {
+  font-size: clamp(34px, 6vw, 72px);
+  line-height: 1.04;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin: 0 0 20px;
+}
+.gal-title .grad {
+  background: linear-gradient(96deg, var(--accent) 10%, var(--accent2) 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-left: 0.14em;
+}
+.gal-sub {
+  color: var(--muted);
+  font-size: clamp(14px, 1.6vw, 17px);
+  margin: 0 0 34px;
+  letter-spacing: 0.02em;
+}
+
+/* ---------- Search ---------- */
+.gal-search {
+  position: relative;
+  max-width: 460px;
+  display: flex;
+  align-items: center;
+}
+.gal-search-ico {
+  position: absolute;
+  left: 16px;
+  width: 19px;
+  height: 19px;
+  color: #6f83ac;
+  pointer-events: none;
+}
+.gal-search input {
+  width: 100%;
+  padding: 15px 46px 15px 46px;
+  border-radius: 14px;
+  border: 1px solid rgba(120, 150, 210, 0.22);
+  background: rgba(16, 24, 44, 0.72);
+  color: var(--text);
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+  backdrop-filter: blur(8px);
+}
+.gal-search input::placeholder { color: #5d6f93; }
+.gal-search input:focus {
+  border-color: rgba(47, 214, 255, 0.55);
+  box-shadow: 0 0 0 3px rgba(47, 214, 255, 0.12);
+  background: rgba(18, 28, 52, 0.92);
+}
+.gal-clear {
+  position: absolute;
+  right: 12px;
+  border: none;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--muted);
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background 0.15s, color 0.15s;
+}
+.gal-clear:hover { background: rgba(255, 255, 255, 0.16); color: #fff; }
+
+/* ---------- Grid ---------- */
+.gal-grid {
+  max-width: 1240px;
+  margin: 8px auto 0;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(268px, 1fr));
+  gap: 22px;
+}
+
+.card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  background: linear-gradient(180deg, #121b31, #0d1424);
+  border: 1px solid rgba(110, 140, 200, 0.14);
+  transition: transform 0.32s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.32s, box-shadow 0.32s;
+  opacity: 0;
+  animation: rise 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+@keyframes rise {
+  from { opacity: 0; transform: translateY(22px) scale(0.985); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.card:hover, .card:focus-visible {
+  transform: translateY(-6px);
+  border-color: rgba(47, 214, 255, 0.55);
+  box-shadow: 0 20px 46px -16px rgba(0, 0, 0, 0.75),
+    0 0 0 1px rgba(47, 214, 255, 0.18),
+    0 8px 40px -18px rgba(47, 214, 255, 0.55);
+  outline: none;
+}
+
+.card-thumb {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background:
+    repeating-linear-gradient(45deg, #0e1626 0 8px, #101a2c 8px 16px);
+}
+.card-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1), filter 0.4s;
+  filter: saturate(1.05) contrast(1.02);
+}
+.card:hover .card-thumb img { transform: scale(1.06); }
+.card-veil {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 15, 30, 0) 45%,
+    rgba(8, 12, 24, 0.55) 82%,
+    rgba(8, 12, 24, 0.92) 100%
+  );
+  pointer-events: none;
+}
+.card-no {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  font-family: 'Consolas', ui-monospace, monospace;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  color: #cfe4ff;
+  background: rgba(10, 18, 34, 0.66);
+  border: 1px solid rgba(47, 214, 255, 0.32);
+  padding: 3px 9px;
+  border-radius: 7px;
+  backdrop-filter: blur(6px);
+}
+.card-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 56px;
+  height: 56px;
+  margin: -28px 0 0 -28px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #04121f;
+  background: linear-gradient(135deg, var(--accent), #bff5ff);
+  box-shadow: 0 0 0 0 rgba(47, 214, 255, 0.5);
+  opacity: 0;
+  transform: scale(0.6);
+  transition: opacity 0.3s, transform 0.3s;
+}
+.card-play svg { width: 26px; height: 26px; margin-left: 2px; }
+.card:hover .card-play, .card:focus-visible .card-play {
+  opacity: 1;
+  transform: scale(1);
+  animation: ring 1.8s ease-out infinite;
+}
+@keyframes ring {
+  0% { box-shadow: 0 0 0 0 rgba(47, 214, 255, 0.45); }
+  100% { box-shadow: 0 0 0 22px rgba(47, 214, 255, 0); }
+}
+
+.card-meta {
+  padding: 14px 16px 16px;
+}
+.card-name {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.45;
+  letter-spacing: 0.01em;
+  color: #eaf1ff;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 2.9em;
+}
+
+/* ---------- Empty / foot ---------- */
+.gal-empty {
+  max-width: 1240px;
+  margin: 60px auto;
+  text-align: center;
+  color: var(--muted);
+  font-size: 15px;
+}
+.gal-foot {
+  max-width: 1240px;
+  margin: 48px auto 0;
+  padding: 24px;
+  text-align: center;
+  color: #5a6c90;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  border-top: 1px solid rgba(110, 140, 200, 0.1);
+}
+
+@media (max-width: 640px) {
+  .gal-hero { padding: 44px 18px 30px; }
+  .gal-grid { padding: 0 16px; gap: 16px; }
+}
