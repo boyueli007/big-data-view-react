@@ -71,6 +71,89 @@
   letter-spacing: 0.02em;
 }
 
+/* ---------- Tabs ---------- */
+.gal-tabs {
+  display: inline-flex;
+  gap: 10px;
+  padding: 6px;
+  margin: 0 0 22px;
+  border-radius: 16px;
+  background: rgba(16, 24, 44, 0.6);
+  border: 1px solid rgba(120, 150, 210, 0.18);
+  backdrop-filter: blur(8px);
+}
+.gal-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  padding: 12px 22px;
+  border: none;
+  border-radius: 11px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  transition: background 0.22s, color 0.22s, box-shadow 0.22s;
+  text-align: left;
+  font-family: inherit;
+}
+.gal-tab:hover { color: #cfe4ff; background: rgba(47, 214, 255, 0.06); }
+.gal-tab.active {
+  color: #04121f;
+  background: linear-gradient(120deg, var(--accent), #bff5ff);
+  box-shadow: 0 8px 26px -10px rgba(47, 214, 255, 0.7);
+}
+.gal-tab-label { font-size: 15px; font-weight: 700; letter-spacing: 0.02em; }
+.gal-tab-sub { font-size: 11px; opacity: 0.8; }
+.gal-tab.active .gal-tab-sub { color: #0a2836; opacity: 0.9; }
+
+/* ---------- Grouped sections ---------- */
+.gal-grouped {
+  max-width: 1240px;
+  margin: 8px auto 0;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.gal-section-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.gal-section-bar {
+  width: 4px;
+  height: 20px;
+  border-radius: 2px;
+  background: linear-gradient(180deg, var(--accent), var(--accent2));
+  box-shadow: 0 0 12px rgba(47, 214, 255, 0.6);
+}
+.gal-section-title {
+  font-size: 19px;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 0.03em;
+  color: #eaf1ff;
+}
+.gal-section-count {
+  font-family: 'Consolas', ui-monospace, monospace;
+  font-size: 12px;
+  color: var(--muted);
+  padding: 2px 9px;
+  border: 1px solid rgba(110, 140, 200, 0.25);
+  border-radius: 20px;
+}
+.gal-section .gal-grid { padding: 0; margin: 0; }
+.card-cat {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 11px;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+  opacity: 0.85;
+}
+
 /* ---------- Search ---------- */
 .gal-search {
   position: relative;

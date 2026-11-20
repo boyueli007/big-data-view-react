@@ -1,18 +1,26 @@
 import { useParams, Navigate } from 'react-router-dom'
 import { useMemo } from 'react'
 import manifest from '../manifest.json'
+import manifest2 from '../manifest2.json'
 import './Screen.css'
 
 const BASE = import.meta.env.BASE_URL || '/'
 
 export default function Screen() {
   const { id } = useParams()
-  const item = useMemo(() => manifest.find((m) => m.id === id), [id])
 
-  if (!item) return <Navigate to="/" replace />
+  const resolved = useMemo(() => {
+    const a = manifest.find((m) => m.id === id)
+    if (a) return { item: a, base: 'screens' }
+    const b = manifest2.find((m) => m.id === id)
+    if (b) return { item: b, base: 'screens2' }
+    return null
+  }, [id])
 
-  // Full project is served statically under /screens/<no>/ ; entry may be a sub path
-  const src = `${BASE}screens/${item.no}/${item.entry}`
+  if (!resolved) return <Navigate to="/" replace />
+
+  const { item, base } = resolved
+  const src = `${BASE}${base}/${item.id}/${item.entry}`
 
   return (
     <div className="screen">
