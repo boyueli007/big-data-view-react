@@ -8,6 +8,22 @@
 (function () {
   "use strict";
 
+  // -------- 逐套识别：从 URL 提取当前大屏编号，挂到 <html> 上，供 CSS 逐套定制 --------
+  // 形如 /screens/001/index.html 或 /screens2/s005/views/index.html
+  var DU_ID = "";
+  try {
+    var m = location.pathname.match(/\/screens2?\/([^\/]+)\//);
+    if (m) DU_ID = m[1];
+  } catch (e) {}
+  function tagId() {
+    try {
+      var html = document.documentElement;
+      if (DU_ID && html && html.classList) html.classList.add("du-s-" + DU_ID);
+    } catch (e) {}
+  }
+  if (document.documentElement) tagId();
+  else document.addEventListener("DOMContentLoaded", tagId);
+
   // 统一配色：冷调科技感，主色青蓝，辅助紫/黄，语义化渐层
   var PALETTE = [
     "#2fd8ff", "#4d8bff", "#7b6bff", "#38f0b0",

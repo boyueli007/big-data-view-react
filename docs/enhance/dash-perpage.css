@@ -1,0 +1,47 @@
+/* ============================================================
+   DashUpgrade 逐套定制层（per-dashboard overrides）
+   通过 <html class="du-s-<编号>"> 精确命中单个大屏，
+   只做“安全装饰/间距/排版”类增强，不改动图表与数据逻辑。
+   ============================================================ */
+
+/* ---------- 057 大屏数据统计：中间空面板做柔和雷达装饰，填充死区 ---------- */
+.du-s-057 .box1-back {
+  position: relative;
+  overflow: hidden;
+}
+.du-s-057 .box1-back::after {
+  content: "";
+  position: absolute;
+  left: 50%; top: 60%;
+  width: 380px; height: 380px;
+  max-width: 78%; max-height: 78%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, rgba(47,216,255,0.10) 0%, transparent 62%),
+    repeating-radial-gradient(circle, rgba(47,216,255,0.16) 0 1px, transparent 1px 46px);
+  box-shadow: inset 0 0 60px rgba(47,216,255,0.10);
+  -webkit-mask-image: radial-gradient(circle, #000 55%, transparent 72%);
+  mask-image: radial-gradient(circle, #000 55%, transparent 72%);
+  animation: duPulse 4.5s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+@keyframes duPulse {
+  0%,100% { opacity: 0.55; transform: translate(-50%,-50%) scale(1); }
+  50%     { opacity: 0.9;  transform: translate(-50%,-50%) scale(1.04); }
+}
+
+/* ---------- 通用：给“数据面板标题”统一细修饰（仅作用于含明确 panel/box 前缀的标题）---------- */
+.du-s-057 .data-title span,
+.du-s-058 .data-title span {
+  letter-spacing: 0.08em;
+}
+
+/* ---------- 036 Data Visualization Display System（开机页）：增强背景氛围 ---------- */
+.du-s-036 body,
+.du-s-036 #app {
+  background:
+    radial-gradient(900px 500px at 50% 30%, rgba(20,60,80,0.35), transparent 60%),
+    #05080f !important;
+}
