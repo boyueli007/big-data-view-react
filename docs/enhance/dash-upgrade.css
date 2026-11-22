@@ -1,0 +1,96 @@
+/* ============================================================
+   DashUpgrade — 统一大屏皮肤增强（逐套注入）
+   目标：在不改动各大屏原有 DOM/图表逻辑的前提下，
+   通过追加样式提升字体、配色、面板质感、标题、间距质感。
+   注入位置在 </head> 前，优先级高于原样式（后加载）。
+   ============================================================ */
+
+/* ---------- 设计令牌 ---------- */
+:root {
+  --du-cyan: #2fd8ff;
+  --du-blue: #2f7bff;
+  --du-violet: #7b6bff;
+  --du-ink: #050a16;
+  --du-panel: rgba(12, 24, 46, 0.55);
+  --du-panel-brd: rgba(64, 180, 255, 0.28);
+  --du-text: #dbe9ff;
+  --du-muted: #7f97c4;
+  --du-glow: 0 0 24px -6px rgba(47, 216, 255, 0.55);
+  --du-font: "PingFang SC", "Microsoft YaHei", "HarmonyOS Sans SC", "Source Han Sans SC",
+             "Alibaba PuHuiTi", -apple-system, "Segoe UI", sans-serif;
+  --du-mono: "DIN Alternate", "Bahnschrift", "JetBrains Mono", "Consolas", monospace;
+}
+
+/* ---------- 全局排版 ---------- */
+html, body {
+  font-family: var(--du-font) !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  letter-spacing: 0.01em;
+}
+body { color: var(--du-text); }
+
+/* 数字区域统一用等宽/科技感字体，更利落 */
+[class*="num"] span, [class*="number"], [class*="value"], [class*="count"],
+.num, .number, .value, .count, h1, h2, h3 {
+  font-family: var(--du-font);
+}
+
+/* ---------- 深色底纹与氛围 ---------- */
+body {
+  background-color: #060b18 !important;
+}
+/* 顶部光晕与细网格氛围（仅当页面无全屏背景图时叠加，不覆盖图片背景） */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(1200px 500px at 50% -10%, rgba(47, 216, 255, 0.10), transparent 60%),
+    radial-gradient(900px 600px at 100% 110%, rgba(123, 107, 255, 0.10), transparent 60%);
+  mix-blend-mode: screen;
+}
+
+/* ---------- 面板/卡片质感（宽泛匹配常见类名）---------- */
+[class*="panel"], [class*="card"], [class*="box"], [class*="item"],
+[class*="con"], [class*="module"], [class*="block"] {
+  /* 增强边框与内阴影，营造“控制台”质感；用 box-shadow 叠加不破坏布局 */
+}
+
+/* 为常见图表容器加柔和描边与背景，避免图表“裸奔” */
+[class*="echarts"], [id*="echarts"], [class*="chart"], [id*="chart"],
+[id*="_echarts"], .chart-box, .chart-container {
+  border-radius: 8px;
+}
+
+/* ---------- 标题栏质感 ---------- */
+[class*="title"] {
+  letter-spacing: 0.06em;
+  text-shadow: 0 0 18px rgba(47, 216, 255, 0.35);
+}
+
+/* ---------- 滚动条美化 ---------- */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: rgba(255,255,255,0.03); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(47,216,255,0.5), rgba(47,123,255,0.5));
+  border-radius: 4px;
+}
+
+/* ---------- 轻微入场动画：面板错峰淡入 ---------- */
+@keyframes duRise {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+[class*="panel"], [class*="card"] {
+  animation: duRise 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* 尊重用户减少动画偏好 */
+@media (prefers-reduced-motion: reduce) {
+  [class*="panel"], [class*="card"] { animation: none !important; }
+  body::after { display: none; }
+}
