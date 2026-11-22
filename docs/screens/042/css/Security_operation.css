@@ -224,7 +224,7 @@ html{
     cursor:move;
 }
 /*.map2D{*/
-    /*background-image: url("../images/2Dmap.png");*/
+    /*background-image: ../images/2Dmap.webp");*/
 /*}*/
 .display_box{
     width: 20%;

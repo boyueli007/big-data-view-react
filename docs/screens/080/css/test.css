@@ -223,7 +223,7 @@
 }
 .video_content .content_center{
     width: calc(100% - 380px);
-    background: url("../img/map.png") no-repeat;
+    background: ../img/map.webp") no-repeat;
 }
 .video_content .content_center .map{
     width: 100%;

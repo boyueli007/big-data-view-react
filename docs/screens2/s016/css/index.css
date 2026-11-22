@@ -1,4 +1,4 @@
-body{padding: 10px; background: url(../images/bg_body.jpg) no-repeat;}
+body{padding: 10px; background: ../images/bg_body.webp) no-repeat;}
 ul{margin: 0; padding: 0;}
 header{width:1900px; height: 83px; line-height: 83px; color: #FFFFFF; font-size: 30px; letter-spacing: 10px; background: url(../images/bg_title.png) no-repeat; margin: 0 auto; text-align: center;}
 .container{width: 1900px;}

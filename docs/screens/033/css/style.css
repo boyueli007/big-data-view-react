@@ -9,7 +9,7 @@ body {
   height: 100%;
 }
 body {
-  background: url(../images/53bg.png) no-repeat;
+  background: ../images/53bg.webp) no-repeat;
   background-size: 100%;
 }
 ul,
@@ -192,7 +192,7 @@ header p {
   top: 0;
   width: 100%;
   height: 100%;
-  background: url(../images/53earth.png) no-repeat center;
+  background: ../images/53earth.webp) no-repeat center;
   background-size: contain;
 }
 .main .total .sphere .sum {

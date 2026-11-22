@@ -16,7 +16,7 @@ html, body {
 	overflow-x:hidden;
 	overflow-y:auto;
 }
-body.bg06 {background-image:url("../img/bg06.png");}
+body.bg06 {background-image:../img/bg06.webp");}
 .header {
 	margin:0 auto;
 	width:100%;

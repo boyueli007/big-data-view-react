@@ -3,7 +3,7 @@
     margin: 0 auto;
     width: 100%;
     height: 5.454545rem;
-    background: url(../img/beijing.png) no-repeat;
+    background: ../img/beijing.webp) no-repeat;
     background-size: cover;
     padding-top: .10101rem;
     box-sizing: border-box;

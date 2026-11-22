@@ -1,6 +1,6 @@
 .office-efficiency-index{font-family:PingFangSC-Semibold,PingFang SC;background-color:#22284A;background-size:cover;}
 /*头部样式*/
-.office-header{height:9rem;background: url("../images/office_efficiency_header_bg.png")no-repeat center center;background-size: 100% 100%;}
+.office-header{height:9rem;background: ../images/office_efficiency_header_bg.webp")no-repeat center center;background-size: 100% 100%;}
 .office-header .title-info{height: 2em;color:#03C2EC;text-align: center;font-size: 24px;font-family:'cuhei';font-weight: 600;line-height: 2em;vertical-align: middle;}
 .analysis-info{height:4rem;line-height:3.5rem;vertical-align:middle;font-size: 20px;font-weight: 600;background-image: linear-gradient(#D8AE22, #DC9546);-webkit-background-clip: text;-webkit-text-fill-color: transparent;-webkit-animation: hue 60s infinite linear;}
 .analysis-filter{height:4.5rem;}
@@ -117,7 +117,7 @@
 
 /*门店台席受理详情*/
 .office-efficiency-index .device-info-col .col-info{height:45rem;}
-.office-efficiency-index .device-info-col .content{height:41rem;background: url("../images/office_efficiency_foot_bg.png")no-repeat bottom center;}
+.office-efficiency-index .device-info-col .content{height:41rem;background: ../images/office_efficiency_foot_bg.webp")no-repeat bottom center;}
 .office-efficiency-index .device-info-col .col-info .title{width:200px;}
 .office-efficiency-index .device-info-col .col-info .title-icon{position:absolute; top:0px;right:10px;width:280px;height:50px;padding-right:10px;}
 .office-efficiency-index .device-info-col .col-info .title-icon .device-alarm{float:right;font-size:25px;margin:5px 5px 0px 5px;}
@@ -141,10 +141,10 @@
 .content.deviceInfo .progress-bar {background-color: #009AFD;}
 /*耗时步骤分析详情*/
 .office-efficiency-index .time-step-col .col-info{height:45rem;}
-.office-efficiency-index .time-step-col .content{height:41rem;background: url("../images/office_efficiency_foot_bg.png")no-repeat bottom center;}
+.office-efficiency-index .time-step-col .content{height:41rem;background: ../images/office_efficiency_foot_bg.webp")no-repeat bottom center;}
 
 /*业务类型耗时分析详情*/
 .office-efficiency-index .business-type-time-col .col-info{height:45rem;}
-.office-efficiency-index .business-type-time-col .content{height:41rem;background: url("../images/office_efficiency_foot_bg.png")no-repeat bottom center;}
+.office-efficiency-index .business-type-time-col .content{height:41rem;background: ../images/office_efficiency_foot_bg.webp")no-repeat bottom center;}
 
 

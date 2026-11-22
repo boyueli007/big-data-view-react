@@ -1,5 +1,5 @@
 /*全局控制栏*/
-body{ background-color: #020712; margin: 0; font-family: "Microsoft YaHei"; font-weight: lighter; background-image: url("../images/Homebodybg.png");
+body{ background-color: #020712; margin: 0; font-family: "Microsoft YaHei"; font-weight: lighter; background-image: ../images/Homebodybg.webp");
     background-repeat: no-repeat; background-position: center; background-position-y: -120px;}
 a{ text-decoration: none; color: white;}
 .l_left{float: left}

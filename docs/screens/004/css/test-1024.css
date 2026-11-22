@@ -8,7 +8,7 @@
 
 body{
 
-    background: #081325 url(../images/interact.png) center no-repeat;
+    background: #081325 ../images/interact.webp) center no-repeat;
     background-size:cover;
 }
 div{

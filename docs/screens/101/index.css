@@ -19,7 +19,7 @@ body {
     margin: 0;
     padding: 0;
     /*  背景图定位 / 背景图尺寸  cover 完全铺满容器  contain 完整显示在容器内 */
-    background: url("./img/bg.jpg") no-repeat #000;
+    background: ./img/bg.webp") no-repeat #000;
     background-size: cover;
     /* 行高是字体1.15倍 */
     line-height: 1.15;
@@ -278,7 +278,7 @@ header .showTime {
     transform: translate(-50%, -50%);
     width: 6.475rem;
     height: 6.475rem;
-    background: url("./img/map.png")/*tpa=http://192.144.204.102/images/map.png*/ no-repeat;
+    background: ./img/map.webp")/*tpa=http://192.144.204.102/images/map.png*/ no-repeat;
     background-size: 100% 100%;
     opacity: 0.3;
 }
@@ -300,7 +300,7 @@ header .showTime {
 .map .map3 {
     width: 7.075rem;
     height: 7.075rem;
-    background-image: url("./img/jt.png")/*tpa=http://192.144.204.102/images/jt.png*/;
+    background-image: ./img/jt.webp")/*tpa=http://192.144.204.102/images/jt.png*/;
 }
 
 @keyframes rotate {

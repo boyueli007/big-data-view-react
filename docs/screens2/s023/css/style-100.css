@@ -419,7 +419,7 @@ textarea {
 .aleftboxtbott{background:url(../img/aleftboxtbott.png);background-repeat: no-repeat;background-position: -5px -5px; width:352px; height:385px;}
 /* .aleftboxtbott_cont{ background:rgba(1,202,217,.2) } */
 .amiddboxttop{background:url(../img/amiddboxttop.png);background-repeat: no-repeat;background-position: -5px 0; width:1153px; height:575px;}
-.amiddboxttop_map{background:url(../img/img.png);background-repeat: no-repeat;background-position: -5px -5px; position: relative; width:1040px; height:490px;}
+.amiddboxttop_map{background:../img/img.webp);background-repeat: no-repeat;background-position: -5px -5px; position: relative; width:1040px; height:490px;}
 .amiddboxttop_map span{background:url(../img/camera.png);background-repeat: no-repeat;background-position: 0 0; width: 24px; height: 19px; display: inline-block; position: absolute;}
 .amiddboxttop_map span.camera_l{background:url(../img/camera_l.png);background-repeat: no-repeat;background-position: 0 0; width: 24px; height: 19px; display: inline-block; position: absolute;}
 

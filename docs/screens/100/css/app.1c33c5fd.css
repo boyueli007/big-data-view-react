@@ -172,7 +172,7 @@
 .bg1[data-v-dcbae68a] {
     height: 26.979vw;
     width: 26.979vw;
-    background: url(../img/map.bab2b509.png);
+    background: ../img/map.bab2b509.webp);
     background-size: 100% 100%;
     opacity: .3
 }
@@ -285,7 +285,7 @@ li {
 
 #app {
     width: calc(100vw - 17px);
-    background: url(../img/bg.a6333996.jpg) top
+    background: ../img/bg.a6333996.webp) top
 }
 
 #content {

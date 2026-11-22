@@ -156,7 +156,7 @@
     10px 0px 15px #034c6a inset,  /*右边阴影*/
     0px 10px 15px #034c6a inset;
     position: relative;
-    background: url("../img/chart_map.png") no-repeat ;
+    background: ../img/chart_map.webp") no-repeat ;
 }
 .data_content .data_main .main_center .main_title{
     width: 180px;

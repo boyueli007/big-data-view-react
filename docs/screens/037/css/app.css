@@ -14,10 +14,10 @@ html, body {
 }
 body {margin:0 auto;min-width:375px;max-width:1920px;}
 
-body.bg01 {background-image:url("../img/bg01.png");}
-body.bg02 {background-image:url("../img/bg02.png");}
-body.bg03 {background-image:url("../img/bg03.png");}
-body.bg04 {background-image:url("../img/bg04.png");}
+body.bg01 {background-image:../img/bg01.webp");}
+body.bg02 {background-image:../img/bg02.webp");}
+body.bg03 {background-image:../img/bg03.webp");}
+body.bg04 {background-image:../img/bg04.webp");}
 
 .header {margin:0 auto;position:relative;width:100%;
 	height:65px;max-width:1920px;

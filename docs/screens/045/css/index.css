@@ -53,7 +53,7 @@ body{
 	overflow: auto;
 }
 .wrap{
-    background:url(../img/bg.png) no-repeat;
+    background:../img/bg.webp) no-repeat;
     height: 1080px;
     background-size: cover;
     width: 1920px;

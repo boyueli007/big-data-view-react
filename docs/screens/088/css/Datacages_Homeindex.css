@@ -4,7 +4,7 @@ body {
     margin: 0;
     font-family: "Microsoft YaHei";
     font-weight: lighter;
-    background-image: url("../img/Homebodybg.png");
+    background-image: ../img/Homebodybg.webp");
     background-repeat: no-repeat;
     background-position: center;
     background-position-y: -120px;

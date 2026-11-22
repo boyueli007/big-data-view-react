@@ -8,7 +8,7 @@ body,html{
     height: auto;
     color:#333;
     /* overflow: hidden;*/
-    /*background: url('../img/true.png') ;*/
+    /*background: ../img/true.webp') ;*/
     background-color: #001d58;
     background-size: 100% 100%;
 }

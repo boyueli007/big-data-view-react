@@ -2,7 +2,7 @@
 .clearfloat:after{display: block;clear:both;content:"";visibility: hidden;height:0}
 html{width:100%;height:100%}
 body{
-    background: url('../img/3.jpg') no-repeat center;
+    background: ../img/3.webp') no-repeat center;
     background-size: 100% 100%;
     height: 100%;
     font-family: "Microsoft Yahei";
@@ -536,7 +536,7 @@ body{
     height: 100%;
     float: left;
     margin-right: 20px;
-    background: url("../img/10_03.png") no-repeat;
+    background: ../img/10_03.webp") no-repeat;
     background-size: 100% 100%;
 }
 .yjxxts-box:last-child{margin-right: 0;}
@@ -553,7 +553,7 @@ body{
     position: absolute;
     top:-13px;
     right:20px;
-    background: url("../img/2.jpg") no-repeat;
+    background: ../img/2.webp") no-repeat;
     background-size: 100% 100%;
     z-index: 100;
     transform: scale(1,0);

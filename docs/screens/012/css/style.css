@@ -5,7 +5,7 @@
 	-moz-box-sizing: border-box;
 	box-sizing: border-box}
 *,body{padding:0px;	margin:0px;font-family: "微软雅黑";}
-body{color:#fff;font-size: 16px; background: #033c76 url(../images/bg.png) no-repeat; background-size: 100% 100%;
+body{color:#fff;font-size: 16px; background: #033c76 ../images/bg.webp) no-repeat; background-size: 100% 100%;
 }
 @font-face{font-family:electronicFont;src:url(../font/DS-DIGIT.TTF)}
 html,body{min-height: 100%;}

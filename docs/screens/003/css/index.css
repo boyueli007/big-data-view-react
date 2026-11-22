@@ -4,7 +4,7 @@
 	margin:0 auto;
     width:100%;
     min-height:100vh;
-    background:url(../images/bg2.jpg) no-repeat;
+    background:../images/bg2.webp) no-repeat;
     background-size: cover;
     padding-top:0rem;
 	padding:0rem 0.2rem;

@@ -5,7 +5,7 @@
     box-sizing: border-box}
 *,body{padding:0px;	margin:0px;color: #222;font-family: "微软雅黑";}
 html,body{
-    background: url("../images/bg01.png") no-repeat;
+    background: ../images/bg01.webp") no-repeat;
     background-size: cover;
     font-size: .16rem;
     color: #ffffff;

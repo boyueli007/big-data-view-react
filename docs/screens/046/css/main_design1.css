@@ -1,5 +1,5 @@
 body,html{width:100%;height:100%;margin:0px;padding:0px;font-size:12px;color:#555;background-color:#000;font-family:'微软雅黑'}
-#main{width:4352px;height:1536px;display:inline-block; background:url(../images/screenbg_design1.jpg) left top no-repeat}
+#main{width:4352px;height:1536px;display:inline-block; background:../images/screenbg_design1.webp) left top no-repeat}
 
 /*年月日文字*/
 #currentYear{width:213px;height:107px;position:absolute;left:430px;top:100px;color:#FFF;font-size:36px; font-family:'微软雅黑';text-align:center}

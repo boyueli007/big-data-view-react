@@ -1,7 +1,7 @@
 /*大屏*/
 /* beijing */
 .bg {
-    background: url(../img/beijing.png) no-repeat;
+    background: ../img/beijing.webp) no-repeat;
     background-size: cover;
     width: 10rem;
     height: 5.454545rem;

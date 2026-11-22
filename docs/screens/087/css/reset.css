@@ -141,7 +141,7 @@ html,
 
 .main {
     position: relative;
-    background: url(../img/bg.jpg) no-repeat;
+    background: ../img/bg.webp) no-repeat;
     background-size: cover;
 }
 

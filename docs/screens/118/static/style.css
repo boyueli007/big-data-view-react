@@ -1,7 +1,7 @@
 .main_box {
     width: 100vw;
     height: 100vh;
-    background: url('../images/bg.png') no-repeat center;
+    background: ../images/bg.webp') no-repeat center;
     background-size: cover;
     overflow: hidden;
     padding: 10px;

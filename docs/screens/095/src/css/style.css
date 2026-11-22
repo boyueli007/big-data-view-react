@@ -2,7 +2,7 @@ html, body{
 	color: #FFFFFF;
 	font-size: 14px;
 	font-family: "微软雅黑";
-	background: url(../../src/img/map_bg.png) no-repeat #0F1A3D;
+	background: ../../src/img/map_bg.webp) no-repeat #0F1A3D;
 	background-size: cover;
 }
 

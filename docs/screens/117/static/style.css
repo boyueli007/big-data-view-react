@@ -91,7 +91,7 @@ a:hover {
 
 
 .tsg_head {
-	background: url(../images/top.png) no-repeat;
+	background: ../images/top.webp) no-repeat;
 	background-size: 100%100%;
 	height: 23vh;
 	margin: 0 4vh;
@@ -452,7 +452,7 @@ a:hover {
 
 .tsg_online_kl_li{
 	flex: 1;
-	background: url(../images/img.png) no-repeat;
+	background: ../images/img.webp) no-repeat;
 	background-size: 100%100%;
 	text-align: center;
 	height: 24vh;

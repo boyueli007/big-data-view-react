@@ -48,7 +48,7 @@
     width: 1381px;
     height: 625px;
     overflow: hidden;
-    background-image: url(../image/circlepath.png);
+    background-image: ../image/circlepath.webp);
     background-repeat: no-repeat;
     background-position: 0 0;
     background-size: 100% 100%;

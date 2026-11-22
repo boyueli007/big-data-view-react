@@ -41,7 +41,7 @@ html,
 body {
     font-family: 微软雅黑, MicrosoftYahei, sans-serif;
     color: #fff;
-    background: #00065b url(../img/bg.jpg);
+    background: #00065b ../img/bg.webp);
     background-size: 100% 100%;
     background-position: 0 0;
     width: 100%;
@@ -913,7 +913,7 @@ i.redr {
 }
 
 .amiddboxttop_map {
-    background: url(../img/img.jpg);
+    background: ../img/img.webp);
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: top center;
