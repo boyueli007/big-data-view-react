@@ -45,3 +45,14 @@
     radial-gradient(900px 500px at 50% 30%, rgba(20,60,80,0.35), transparent 60%),
     #05080f !important;
 }
+
+/* ---------- 073 观测站：百度地图容器空白时给深色地图底纹，消除刺眼白块 ---------- */
+.du-s-073 #allmap {
+  background:
+    radial-gradient(circle at 50% 45%, rgba(47,216,255,0.10), transparent 60%),
+    repeating-linear-gradient(0deg, rgba(47,216,255,0.05) 0 1px, transparent 1px 40px),
+    repeating-linear-gradient(90deg, rgba(47,216,255,0.05) 0 1px, transparent 1px 40px),
+    #071225 !important;
+  outline: 1px solid rgba(47,216,255,0.18);
+  outline-offset: -1px;
+}

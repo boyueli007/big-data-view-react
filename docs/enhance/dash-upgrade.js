@@ -252,4 +252,59 @@
   document.addEventListener("DOMContentLoaded", function () {
     [400, 1000].forEach(function (t) { setTimeout(refreshAll, t); });
   });
+
+  // ---------- 逐套特定修护（按编号）----------
+  // 只做“视觉重着色/装饰”类修复，不改变数据。
+  var PER_PAGE = {
+    // 091：中国地图白底 -> 深色科技风（覆盖 visualMap 的浅色段，不改数据值）
+    "091": function () {
+      try {
+        var ec = window.echarts;
+        if (!ec || !ec.getInstanceByDom) return;
+        var nodes = document.querySelectorAll("div");
+        for (var i = 0; i < nodes.length; i++) {
+          var inst = ec.getInstanceByDom(nodes[i]);
+          if (!inst) continue;
+          var o = inst.getOption();
+          var isMap = false, seriesPatch = null;
+          if (o && o.series && o.series.length) {
+            seriesPatch = o.series.map(function (s) {
+              if (s && s.type === "map") {
+                isMap = true;
+                return { itemStyle: { areaColor: "#123a63", borderColor: "rgba(90,190,255,0.6)", borderWidth: 1 },
+                         emphasis: { itemStyle: { areaColor: "rgba(47,216,255,0.6)" }, label: { color: "#fff" } },
+                         label: { color: "#bcd4f5", fontSize: 11 } };
+              }
+              return {};
+            });
+          }
+          if (!isMap) continue;
+          // echarts 3.x 使用 itemStyle.normal / emphasis 嵌套结构
+          inst.setOption({
+            visualMap: { show: false, inRange: { color: ["#123a63", "#1c6fa0", "#2bb6d8", "#2fd8ff", "#8ff0ff"] } },
+            geo: {
+              itemStyle: { normal: { areaColor: "#0f2d52", borderColor: "rgba(90,190,255,0.6)", borderWidth: 1 },
+                           emphasis: { areaColor: "rgba(47,216,255,0.6)", borderColor: "#8fe3ff" } },
+              label: { normal: { show: false }, emphasis: { show: true, textStyle: { color: "#fff", fontSize: 10 } } }
+            },
+            series: seriesPatch
+          }, false);
+          try { inst.resize(); } catch (e) {}
+        }
+      } catch (e) {}
+    }
+  };
+
+  function runPerPage() {
+    if (DU_ID && PER_PAGE[DU_ID]) {
+      try { PER_PAGE[DU_ID](); } catch (e) {}
+    }
+  }
+  // 多时机运行（等图表初始化 + 数据 setOption 之后再覆盖配色）
+  window.addEventListener("load", function () {
+    [300, 900, 1800, 3000].forEach(function (t) { setTimeout(runPerPage, t); });
+  });
+  document.addEventListener("DOMContentLoaded", function () {
+    [600, 1500].forEach(function (t) { setTimeout(runPerPage, t); });
+  });
 })();
