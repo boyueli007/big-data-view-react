@@ -72,6 +72,20 @@ body::after {
   text-shadow: 0 0 18px rgba(47, 216, 255, 0.35);
 }
 
+/* 主标题（h1）更精致的排印：渐变文字 + 柔和光晕（仅 h1，影响面可控） */
+h1 {
+  font-weight: 700 !important;
+  letter-spacing: 0.05em;
+  background: linear-gradient(180deg, #ffffff 0%, #cfeaff 55%, #86d3ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
+  filter: drop-shadow(0 2px 10px rgba(47, 216, 255, 0.35));
+}
+/* h2 稳一点的字重与字距，不改颜色避免破坏浅底页面 */
+h2 { font-weight: 700 !important; letter-spacing: 0.04em; }
+
 /* ---------- 滚动条美化 ---------- */
 ::-webkit-scrollbar { width: 8px; height: 8px; }
 ::-webkit-scrollbar-track { background: rgba(255,255,255,0.03); }
