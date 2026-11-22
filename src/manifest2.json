@@ -4,174 +4,174 @@
         "name":  "大数据可视化展板通用模板",
         "cat":  "智慧城市",
         "entry":  "index.html",
-        "thumb":  "thumbs2/s001.png"
+        "thumb":  "thumbs2_opt/s001.jpg"
     },
     {
         "id":  "s002",
         "name":  "智慧工地",
         "cat":  "智慧城市",
         "entry":  "index.html",
-        "thumb":  "thumbs2/s002.png"
+        "thumb":  "thumbs2_opt/s002.jpg"
     },
     {
         "id":  "s003",
         "name":  "电子商务公共服务平台大数据中心",
         "cat":  "智慧电商",
         "entry":  "index.html",
-        "thumb":  "thumbs2/s003.png"
+        "thumb":  "thumbs2_opt/s003.jpg"
     },
     {
         "id":  "s004",
         "name":  "销售大数据页面模板",
         "cat":  "智慧电商",
         "entry":  "index.html",
-        "thumb":  "thumbs2/s004.png"
+        "thumb":  "thumbs2_opt/s004.jpg"
     },
     {
         "id":  "s005",
         "name":  "运营大数据",
         "cat":  "智慧电商",
         "entry":  "index.html",
-        "thumb":  "thumbs2/s005.png"
+        "thumb":  "thumbs2_opt/s005.jpg"
     },
     {
         "id":  "s006",
         "name":  "大数据视频监控",
         "cat":  "智慧交通",
         "entry":  "index.html",
-        "thumb":  "thumbs2/s006.png"
+        "thumb":  "thumbs2_opt/s006.jpg"
     },
     {
         "id":  "s007",
         "name":  "高速交通大数据分析平台",
         "cat":  "智慧交通",
         "entry":  "index.html",
-        "thumb":  "thumbs2/s007.png"
+        "thumb":  "thumbs2_opt/s007.jpg"
     },
     {
         "id":  "s008",
         "name":  "旅游大数据",
         "cat":  "智慧交通",
         "entry":  "index.html",
-        "thumb":  "thumbs2/s008.png"
+        "thumb":  "thumbs2_opt/s008.jpg"
     },
     {
         "id":  "s009",
         "name":  "银行企业信用风险实时监测",
         "cat":  "智慧金融",
         "entry":  "index.html",
-        "thumb":  "thumbs2/s009.png"
+        "thumb":  "thumbs2_opt/s009.jpg"
     },
     {
         "id":  "s010",
         "name":  "气象预报大数据平台",
         "cat":  "智慧气象",
         "entry":  "index.html",
-        "thumb":  "thumbs2/s010.png"
+        "thumb":  "thumbs2_opt/s010.jpg"
     },
     {
         "id":  "s011",
         "name":  "物联网平台数据统计",
         "cat":  "智慧物联",
         "entry":  "index.html",
-        "thumb":  "thumbs2/s011.png"
+        "thumb":  "thumbs2_opt/s011.jpg"
     },
     {
         "id":  "s012",
         "name":  "新能源车联网综合大数据平台",
         "cat":  "智慧物联",
         "entry":  "index.html",
-        "thumb":  "thumbs2/s012.png"
+        "thumb":  "thumbs2_opt/s012.jpg"
     },
     {
         "id":  "s013",
         "name":  "物流大数据服务平台",
         "cat":  "智慧物流",
         "entry":  "index.html",
-        "thumb":  "thumbs2/s013.png"
+        "thumb":  "thumbs2_opt/s013.jpg"
     },
     {
         "id":  "s014",
         "name":  "智慧物流",
         "cat":  "智慧物流",
         "entry":  "index.html",
-        "thumb":  "thumbs2/s014.png"
+        "thumb":  "thumbs2_opt/s014.jpg"
     },
     {
         "id":  "s015",
         "name":  "大数据医疗",
         "cat":  "智慧医疗",
         "entry":  "views/index.html",
-        "thumb":  "thumbs2/s015.png"
+        "thumb":  "thumbs2_opt/s015.jpg"
     },
     {
         "id":  "s016",
         "name":  "大数据统计展示大屏",
         "cat":  "智慧运维",
         "entry":  "index.html",
-        "thumb":  "thumbs2/s016.png"
+        "thumb":  "thumbs2_opt/s016.jpg"
     },
     {
         "id":  "s017",
         "name":  "大数据运维总览图",
         "cat":  "智慧运维",
         "entry":  "index.html",
-        "thumb":  "thumbs2/s017.png"
+        "thumb":  "thumbs2_opt/s017.jpg"
     },
     {
         "id":  "s018",
         "name":  "可视化监控管理",
         "cat":  "智慧运维",
         "entry":  "index.html",
-        "thumb":  "thumbs2/s018.png"
+        "thumb":  "thumbs2_opt/s018.jpg"
     },
     {
         "id":  "s019",
         "name":  "设备环境监测平台",
         "cat":  "智慧运维",
         "entry":  "index.html",
-        "thumb":  "thumbs2/s019.png"
+        "thumb":  "thumbs2_opt/s019.jpg"
     },
     {
         "id":  "s020",
         "name":  "厅店效能大屏监控看板",
         "cat":  "智慧运营",
         "entry":  "page/index.html",
-        "thumb":  "thumbs2/s020.png"
+        "thumb":  "thumbs2_opt/s020.jpg"
     },
     {
         "id":  "s021",
         "name":  "工商办税大数据监控平台",
         "cat":  "智慧政务",
         "entry":  "index.html",
-        "thumb":  "thumbs2/s021.png"
+        "thumb":  "thumbs2_opt/s021.jpg"
     },
     {
         "id":  "s022",
         "name":  "土地交易大数据可视化平台",
         "cat":  "智慧政务",
         "entry":  "index.html",
-        "thumb":  "thumbs2/s022.png"
+        "thumb":  "thumbs2_opt/s022.jpg"
     },
     {
         "id":  "s023",
         "name":  "舆情分析",
         "cat":  "智慧政务",
         "entry":  "analysis.html",
-        "thumb":  "thumbs2/s023.png"
+        "thumb":  "thumbs2_opt/s023.jpg"
     },
     {
         "id":  "s024",
         "name":  "智慧社区",
         "cat":  "智慧政务",
         "entry":  "index.html",
-        "thumb":  "thumbs2/s024.png"
+        "thumb":  "thumbs2_opt/s024.jpg"
     },
     {
         "id":  "s025",
         "name":  "综合分析平台",
         "cat":  "智慧政务",
         "entry":  "pages/index.html",
-        "thumb":  "thumbs2/s025.png"
+        "thumb":  "thumbs2_opt/s025.jpg"
     }
 ]
