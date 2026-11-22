@@ -4,12 +4,14 @@
    只做“安全装饰/间距/排版”类增强，不改动图表与数据逻辑。
    ============================================================ */
 
-/* ---------- 057 大屏数据统计：中间空面板做柔和雷达装饰，填充死区 ---------- */
-.du-s-057 .box1-back {
+/* ---------- 057 / s002 大屏数据统计：中间空面板做柔和雷达装饰，填充死区 ---------- */
+.du-s-057 .box1-back,
+.du-s-s002 .box1-back {
   position: relative;
   overflow: hidden;
 }
-.du-s-057 .box1-back::after {
+.du-s-057 .box1-back::after,
+.du-s-s002 .box1-back::after {
   content: "";
   position: absolute;
   left: 50%; top: 60%;
