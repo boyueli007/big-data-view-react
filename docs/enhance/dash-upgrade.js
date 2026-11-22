@@ -162,11 +162,31 @@
     return true;
   }
 
-  // 立即尝试；若 echarts 尚未加载，排轮询（最多 ~8s）
+  // 遍历所有 ECharts 实例：重套主题 + resize（修复初始化时容器尺寸为 0 导致图表不显示的问题）
+  function refreshAll() {
+    try {
+      var ec = window.echarts;
+      if (!ec || !ec.getInstanceByDom) return;
+      var nodes = document.querySelectorAll("div");
+      for (var i = 0; i < nodes.length; i++) {
+        var inst = ec.getInstanceByDom(nodes[i]);
+        if (inst) {
+          applyThemeToInstance(inst);
+          // 容器实际有尺寸但实例尺寸为 0 时，resize 可让图表重新铺满并绘制
+          try {
+            var dom = inst.getDom && inst.getDom();
+            if (dom && dom.clientWidth > 0 && dom.clientHeight > 0) inst.resize();
+          } catch (e) {}
+        }
+      }
+    } catch (e) {}
+  }
+
+  // 立即尝试；若 echarts 尚未加载，排轮询（最多 ~10s）
   var tries = 0;
   function poll() {
     if (hook()) return;
-    if (++tries > 80) return;
+    if (++tries > 100) return;
     setTimeout(poll, 100);
   }
   if (document.readyState === "loading") {
@@ -174,19 +194,17 @@
   } else {
     poll();
   }
-  // 页面 load 后再统一补一次（覆盖延迟初始化的图表）
+
+  // 多时机刷新，覆盖：图表延迟初始化、容器尺寸后置、tab 切换等常见时序问题
   window.addEventListener("load", function () {
-    setTimeout(function () {
-      try {
-        var ec = window.echarts;
-        if (ec && ec.getInstanceByDom) {
-          var nodes = document.querySelectorAll("div");
-          for (var i = 0; i < nodes.length; i++) {
-            var inst = ec.getInstanceByDom(nodes[i]);
-            if (inst) applyThemeToInstance(inst);
-          }
-        }
-      } catch (e) {}
-    }, 300);
+    [200, 600, 1200, 2500].forEach(function (t) { setTimeout(refreshAll, t); });
+  });
+  // 窗口尺寸变化时同步 resize
+  var rzT;
+  window.addEventListener("resize", function () {
+    clearTimeout(rzT); rzT = setTimeout(refreshAll, 200);
+  });
+  document.addEventListener("DOMContentLoaded", function () {
+    [400, 1000].forEach(function (t) { setTimeout(refreshAll, t); });
   });
 })();

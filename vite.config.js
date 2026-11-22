@@ -9,4 +9,16 @@ const base = process.env.GH_BASE || (repo ? `/${repo}/` : '/')
 export default defineConfig({
   plugins: [react()],
   base,
+  server: {
+    watch: {
+      // 大屏静态资源与编辑器临时文件不参与热更新监听，避免 EBUSY 崩溃
+      ignored: [
+        '**/public/screens/**',
+        '**/public/screens2/**',
+        '**/docs/**',
+        '**/*.tmpdir/**',
+        '**/*.tmp',
+      ],
+    },
+  },
 })
