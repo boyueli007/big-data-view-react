@@ -22,28 +22,31 @@ npm install
 npm run dev
 ```
 
-## 📦 构建（GitHub Pages 子路径）
+## 📦 构建 / 部署
+
+`docs/` 是**唯一提交的源与部署产物**（GitHub Pages 从 `main:/docs` 发布）。`public/` 是可再生的构建工作区，已 `gitignore`，由构建脚本自动从 `docs/` 补齐，无需入库。
 
 ```bash
-GH_BASE=/big-data-view-react/ npm run build
+npm install
+GH_BASE=/big-data-view-react/ npm run build   # docs 静态内容 -> public -> vite build -> dist -> docs(index+assets)
 ```
+
+`scripts/build.mjs` 负责：从 `docs/` 同步静态资源到 `public/`、执行 `vite build`、再把 `dist` 的 `index.html`+`assets` 回写到 `docs/`。
 
 ## 📁 目录结构
 
 ```
-public/
-  screens/    # 合集① 117 套原始大屏（按编号）
-  screens2/   # 合集② 25 套大屏（按 s001…s025）
-  thumbs/     # 合集① 缩略图
-  thumbs2/    # 合集② 缩略图
-  .nojekyll
+docs/                         # 唯一提交源 + Pages 部署产物
+  screens/   screens2/        # 142 套大屏静态页面
+  thumbs_opt/  thumbs2_opt/   # 首页缩略图
+  enhance/                    # 大屏美化增强（CSS/JS/highmaps）
+  index.html  assets/         # 构建后的 React 应用壳
 src/
-  manifest.json   # 合集① 清单
-  manifest2.json  # 合集② 清单（含行业分类 cat）
-  pages/Gallery   # 首页（Tab + 缩略图墙）
-  pages/Screen    # 全屏大屏页（iframe）
-docs/         # 构建产物（GitHub Pages 从此发布）
+  manifest.json   manifest2.json   # 两合集清单（含行业分类 cat）
+  pages/Gallery   pages/Screen     # 首页（Tab+缩略图墙）/ 全屏 iframe 页
+scripts/build.mjs             # 构建同步脚本
 ```
+（`public/` 为构建时临时生成，已忽略）
 
 ## 🧭 路由
 

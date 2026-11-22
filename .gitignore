@@ -5,5 +5,7 @@ dist
 
 _batches.txt
 
-
 _vendor/
+
+# public/ 为可再生的构建工作区（静态内容唯一真源在 docs/，见 scripts/build.mjs）
+public/
