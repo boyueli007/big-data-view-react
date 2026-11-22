@@ -97,26 +97,55 @@
           });
         }
         if (opt.series) {
-          var maps = [];
+          var hasMap = false, hasPie = false;
           opt.series.forEach(function (s) {
-            if (s && s.type === "map") {
-              maps.push({
-                itemStyle: THEME.geo.itemStyle,
-                emphasis: THEME.geo.emphasis,
-                label: { color: "#bcd4f5", fontSize: 11 }
-              });
-            }
+            if (!s) return;
+            if (s.type === "map") hasMap = true;
+            if (s.type === "pie") hasPie = true;
           });
-          if (maps.length) {
-            // 按原顺序仅对 map series 打补丁
+          if (hasMap || hasPie) {
             patch.series = opt.series.map(function (s) {
-              return (s && s.type === "map")
-                ? { itemStyle: THEME.geo.itemStyle, emphasis: THEME.geo.emphasis,
-                    label: { color: "#bcd4f5", fontSize: 11 } }
-                : {};
+              if (!s) return {};
+              if (s.type === "map") {
+                return { itemStyle: THEME.geo.itemStyle, emphasis: THEME.geo.emphasis,
+                         label: { color: "#bcd4f5", fontSize: 11 } };
+              }
+              if (s.type === "pie") {
+                // 饼图标签防重叠：避免密集扇区标签堆叠；保留原 label 文案
+                var keepLabel = (s.label && typeof s.label === "object") ? s.label : {};
+                return {
+                  avoidLabelOverlap: true,
+                  label: {
+                    show: keepLabel.show !== false,
+                    fontSize: keepLabel.fontSize || 11,
+                    formatter: keepLabel.formatter,
+                    color: keepLabel.color || "#cfe0f6"
+                  },
+                  labelLine: { length: 8, length2: 8, smooth: true }
+                };
+              }
+              return {};
             });
           }
         }
+      } catch (e) {}
+      // 坐标轴标签防拥挤：类目轴标签过多时自动间隔 + 轻微旋转
+      try {
+        ["xAxis", "yAxis"].forEach(function (ax) {
+          if (!opt[ax]) return;
+          var arr = Array.isArray(opt[ax]) ? opt[ax] : [opt[ax]];
+          var crowded = arr.some(function (a) {
+            return a && a.type !== "value" && a.data && a.data.length > 8;
+          });
+          if (crowded) {
+            patch[ax] = arr.map(function (a) {
+              if (a && a.type !== "value" && a.data && a.data.length > 8) {
+                return { axisLabel: { interval: "auto", hideOverlap: true, fontSize: 11 } };
+              }
+              return {};
+            });
+          }
+        });
       } catch (e) {}
       inst.setOption(patch, false);
     } catch (e) {}
